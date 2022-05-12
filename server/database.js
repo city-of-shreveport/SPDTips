@@ -6,7 +6,7 @@ module.exports = async () => {
     type: String,
   };
   return await mongo.createConnection({
-    uri: process.env.VISKA_MONGO_URI,
+    uri: process.env.MONGO_URI,
     collections: {
       users: mongo.schema({
         type: {

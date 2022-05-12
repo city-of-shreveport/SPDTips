@@ -16,9 +16,6 @@
             <b> <i class="fa fa-share" />  {{ copyToClipboardText }} </b>
           </Button>
           <span class="padding-left-sm" />
-          <Button class="size-sm padding-left-lg padding-right-lg" color="light" disabled title="Will be available soon!">
-            <b> <i class="fa fa-cog" /> </b>
-          </Button>
           <span class="padding-left-sm" />
           <Button class="size-sm padding-left-lg padding-right-lg" color="light" :disabled="!$chatService.user.type" @click.native="logout">
             <b> <i class="fa fa-sign-out-alt" /> </b>
@@ -27,9 +24,11 @@
       </div>
       <Chats :activeChat="activeChat" @select="goToChat($event.user.type, $event.user.username)"  @add="goToChat($event.type, $event.username)"/>
       <Cell class="padding-x-md app-info text-sm size-sm">
+        <!-- 
         <div class="grow"> <i class="fa fa-code-branch" /> {{packageVersion}} </div>
         <div class="grow"> <a href="https://github.com/nainemom/viska" target="_blank"> <i class="fa fa-code" /> Source-Code </a> </div>
         <div class="grow"> <a href="https://github.com/nainemom/viska/issues" target="_blank"> <i class="fa fa-bug" /> Report Bug </a> </div>
+        -->
       </Cell>
     </div>
     <Chat :class="[$style.chat, !activeChat && 'hidden-on-mobile']" :chat="activeChat" @close="goToChat(undefined, undefined)" @remove="removeChat(activeChat)"/>

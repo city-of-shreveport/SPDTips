@@ -1,12 +1,6 @@
 <template>
 <div :class="$style.container">
   <div :class="$style.chatList">
-    <Cell>
-      <Button class="padding-x-sm size-lg grow" color="dark" @click.native="connectToRandomUser">
-        <div class="padding-x-sm grow" v-if="!loadingRandomChat"> <i class="fa fa-random" />  Talk to a Random User </div>
-        <div class="padding-x-sm grow" v-else> <i class="fa fa-spinner fa-pulse" />  Searching... </div>
-      </Button>
-    </Cell>
     <Cell class="padding-lg">
       <form @submit.prevent="addChat(searchingUser)" :class="$style.searchForm">
         <Input class="size-md" placeholder="Search for Users" v-model="searchUserInput" required @input="scrollToSearchResult()"/>
